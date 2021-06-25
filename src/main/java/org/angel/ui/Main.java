@@ -1,6 +1,7 @@
 package org.angel.ui;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -36,10 +37,13 @@ public class Main
 			System.out.println("Alphabet Inc. not found!");
 		}
 
+		Thread.sleep(1000);
+		driver.findElement(By.partialLinkText("Alphabet Inc.")).click();
 
 
-		Thread.sleep(10000);
-		driver.close();
+
+
+		//driver.close();
 
 
 	}
