@@ -31,7 +31,7 @@ public class Main
 
 		driver.findElementByXPath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input").sendKeys("Alphabet share price" + Keys.ENTER);
 
-		if (driver.findElementByXPath("//span[text()='Alphabet Inc.']") !=null)
+		if (driver.findElementByXPath("//span[text()='Alphabet Inc.']") ==null)
 		{
 			//assert faile
 			System.out.println("Alphabet Inc. not found!");
@@ -40,10 +40,12 @@ public class Main
 		Thread.sleep(1000);
 		driver.findElement(By.partialLinkText("Alphabet Inc.")).click();
 
+		//accepting yahoo terms => therefore confirming going to result page.
+		driver.findElementByXPath("/html/body/div/div/div/div/form/div[2]/div[2]/button").click();
 
 
 
-		//driver.close();
+		driver.close();
 
 
 	}
